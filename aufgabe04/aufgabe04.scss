@@ -1,0 +1,26 @@
+@mixin margin ($values){
+  margin: $values;
+}
+
+@mixin breakpoint ($width){
+  @media (min-width: $width) {
+    @content
+
+  }
+}
+
+examp1 {
+  @include margin(5px);
+  @include margin(5px 10px);
+  @include margin(5px 8px 10px);
+  @include margin(5px 8px 10px 14px);
+}
+
+
+.mobileInvisible {
+  display:none;
+  @include breakpoint(990px) {
+    display: block;
+  }
+}
+
